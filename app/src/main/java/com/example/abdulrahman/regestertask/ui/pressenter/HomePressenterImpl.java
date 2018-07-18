@@ -26,7 +26,6 @@ public class HomePressenterImpl implements HomePressenter, HomeModel.GetCodeAndC
         this.viewReference = new WeakReference<>(viewReference);
         model = new HomeModelImpl();
     }
-
     @Override
     public void init() {
         // check connection
@@ -41,6 +40,8 @@ public class HomePressenterImpl implements HomePressenter, HomeModel.GetCodeAndC
     @Override
     public void clear() {
         model.cancelAllRequest();
+        viewReference.clear();
+        viewReference = null;
     }
 
     @Override
@@ -58,12 +59,12 @@ public class HomePressenterImpl implements HomePressenter, HomeModel.GetCodeAndC
             getView().setEnglishLanguage();
 
         }
+
     }
 
-
-
-
-
+    private boolean isViewCleared() {
+        return viewReference == null;
+    }
 
     @Override
     public void onGettingSuccess(List<Model> countriesAr) {
@@ -73,7 +74,9 @@ public class HomePressenterImpl implements HomePressenter, HomeModel.GetCodeAndC
 
     @Override
     public void onGettingCitiesSuccess(List<City> listCityEn) {
-            getView().setSpinnerCities(listCityEn);
+        if (isViewCleared())
+            return;
+        getView().setSpinnerCities(listCityEn);
 
     }
 

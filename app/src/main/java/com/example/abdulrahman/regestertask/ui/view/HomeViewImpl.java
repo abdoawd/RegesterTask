@@ -40,7 +40,7 @@ public class HomeViewImpl extends AppCompatActivity implements HomeView, Adapter
     ArrayAdapter<String> adapterCities;
     private SpinnerCodeAdapter spinnerCodeAdapter;
     private SpinnerCountryAdapter spinnerCountryAdapter;
-    private SpinnerCitiesAdapter spinnerCitiesAdapter ;
+    private SpinnerCitiesAdapter spinnerCitiesAdapter;
     private HomePressenter pressenter;
 
     @Override
@@ -52,6 +52,7 @@ public class HomeViewImpl extends AppCompatActivity implements HomeView, Adapter
         pressenter.init();
         spinnerCountries.setOnItemSelectedListener(this);
     }
+
     @Override
     public void showConnectionError() {
     }
@@ -63,7 +64,7 @@ public class HomeViewImpl extends AppCompatActivity implements HomeView, Adapter
 
     @Override
     public void setSpinnerCities(List<City> listCity) {
-        spinnerCitiesAdapter=new SpinnerCitiesAdapter(listCity);
+        spinnerCitiesAdapter = new SpinnerCitiesAdapter(listCity);
         spinnerCites.setAdapter(adapterCities);
 
     }
@@ -80,8 +81,8 @@ public class HomeViewImpl extends AppCompatActivity implements HomeView, Adapter
 
     @Override
     public void setCodeAndCountryAdapter(List<Model> list) {
-        spinnerCodeAdapter = new SpinnerCodeAdapter( list);
-        spinnerCountryAdapter = new SpinnerCountryAdapter( list);
+        spinnerCodeAdapter = new SpinnerCodeAdapter(list);
+        spinnerCountryAdapter = new SpinnerCountryAdapter(list);
         spinnerCode.setAdapter(spinnerCodeAdapter);
         spinnerCountries.setAdapter(spinnerCountryAdapter);
 
@@ -96,6 +97,7 @@ public class HomeViewImpl extends AppCompatActivity implements HomeView, Adapter
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
     @OnClick(R.id.terms_and_conditions)
     void termsAndCondition() {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -105,4 +107,9 @@ public class HomeViewImpl extends AppCompatActivity implements HomeView, Adapter
         fragmentTransaction.commit();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        pressenter.clear();
+    }
 }

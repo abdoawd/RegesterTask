@@ -6,7 +6,6 @@ import com.example.abdulrahman.regestertask.beans.Model;
 import com.example.abdulrahman.regestertask.network.ApiClient;
 import com.example.abdulrahman.regestertask.network.ApiService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -18,14 +17,11 @@ import retrofit2.Response;
  */
 
 public class HomeModelImpl implements HomeModel {
-    ApiService service = ApiClient.getClient().create(ApiService.class);
-    Call<List<Model>> codeCall;
-    Call<List<City>> cityCall;
-    List<Model> codes;
-    List<City> cities;
-
-    ArrayList<String> listCityEn = new ArrayList<>();
-    ArrayList<String> listCityAr = new ArrayList<>();
+    private ApiService service = ApiClient.getClient().create(ApiService.class);
+    private Call<List<Model>> codeCall;
+    private Call<List<City>> cityCall;
+    private List<Model> codes;
+    private List<City> cities;
 
     @Override
     public void getCodeAndCountries(final GetCodeAndCountryCallback callback) {
@@ -34,7 +30,7 @@ public class HomeModelImpl implements HomeModel {
             @Override
             public void onResponse(Call<List<Model>> call, Response<List<Model>> response) {
                 if (response.isSuccessful()) {
-                    codes=response.body();
+                    codes = response.body();
                     callback.onGettingSuccess(codes);
                 }
             }

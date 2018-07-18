@@ -1,8 +1,5 @@
 package com.example.abdulrahman.regestertask.utils;
 
-import android.content.res.AssetManager;
-import android.graphics.Typeface;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.abdulrahman.regestertask.R;
@@ -20,8 +17,6 @@ public class ToastUtils {
     public static void showToast(String message) {
         Toast.makeText(App.getContext(), message, Toast.LENGTH_LONG).show();
     }
-
-
 
 
 }

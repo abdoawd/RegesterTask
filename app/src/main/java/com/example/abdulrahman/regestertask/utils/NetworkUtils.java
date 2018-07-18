@@ -2,7 +2,6 @@ package com.example.abdulrahman.regestertask.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
-import android.util.DisplayMetrics;
 
 import com.example.abdulrahman.regestertask.applicatoin.App;
 
@@ -18,10 +17,4 @@ public class NetworkUtils {
         return cm.getActiveNetworkInfo() != null;
     }
 
-    public static int calculateNoOfColumns() {
-        DisplayMetrics displayMetrics = App.getContext().getResources().getDisplayMetrics();
-        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-        int noOfColumns = (int) (dpWidth / 180);
-        return noOfColumns;
-    }
 }

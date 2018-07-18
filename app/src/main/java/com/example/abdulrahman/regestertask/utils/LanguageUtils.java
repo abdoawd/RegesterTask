@@ -1,6 +1,5 @@
 package com.example.abdulrahman.regestertask.utils;
 
-import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
@@ -15,7 +14,7 @@ public class LanguageUtils {
         return Locale.getDefault().getLanguage().equals("en");
     }
 
-    public static void updateLanguage( String selectedLanguage) {
+    public static void updateLanguage(String selectedLanguage) {
         if (!"".equals(selectedLanguage)) {
             Locale locale = new Locale(selectedLanguage);
             Locale.setDefault(locale);

@@ -8,10 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.example.abdulrahman.regestertask.R;
-import com.example.abdulrahman.regestertask.applicatoin.App;
 import com.example.abdulrahman.regestertask.utils.Constants;
 
 import butterknife.BindView;
@@ -24,11 +22,12 @@ import butterknife.ButterKnife;
 public class TermsAndConditionWebViewFragment extends Fragment {
     @BindView(R.id.web_view)
     WebView webView;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_terms_condition,container,false);
-        ButterKnife.bind(this,view);
+        View view = inflater.inflate(R.layout.fragment_terms_condition, container, false);
+        ButterKnife.bind(this, view);
         return view;
 
     }

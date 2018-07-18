@@ -15,7 +15,6 @@ public class City implements Parcelable {
         public City createFromParcel(Parcel source) {
             return new City(source);
         }
-
         @Override
         public City[] newArray(int size) {
             return new City[size];
@@ -29,7 +28,6 @@ public class City implements Parcelable {
     private String titleEN;
     @SerializedName("id")
     private String id;
-
     public City(String countryId, String titleAR, String titleEN, String id) {
         this.countryId = countryId;
         this.titleAR = titleAR;
