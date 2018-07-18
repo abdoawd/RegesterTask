@@ -50,7 +50,6 @@ public class HomeViewImpl extends AppCompatActivity implements HomeView, Adapter
         ButterKnife.bind(this);
         pressenter = new HomePressenterImpl(this);
         pressenter.init();
-        spinnerCountries.setOnItemSelectedListener(this);
     }
 
     @Override
@@ -83,8 +82,8 @@ public class HomeViewImpl extends AppCompatActivity implements HomeView, Adapter
     public void setCodeAndCountryAdapter(List<Model> list) {
         spinnerCodeAdapter = new SpinnerCodeAdapter(list);
         spinnerCountryAdapter = new SpinnerCountryAdapter(list);
-        spinnerCode.setAdapter(spinnerCodeAdapter);
         spinnerCountries.setAdapter(spinnerCountryAdapter);
+        spinnerCode.setAdapter(spinnerCodeAdapter);
 
     }
 

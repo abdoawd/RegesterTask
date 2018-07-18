@@ -20,9 +20,7 @@ import java.util.List;
  */
 
 public class SpinnerCodeAdapter extends BaseAdapter {
-List <Model> list ;
-
-
+    List<Model> list;
     public SpinnerCodeAdapter( List<Model> list) {
         this.list = list;
     }
@@ -50,7 +48,8 @@ List <Model> list ;
             convertView = inflater.inflate(R.layout.item_spinner_code_layout, null);
         }
         TextView textView = convertView.findViewById(R.id.tv_spinner);
-        textView.setText(list.get(position).getCode());
-        return convertView ;
-    }
-}
+            textView.setText(list.get(position).getCurrencyId());
+
+
+        return convertView;
+    }}

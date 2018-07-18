@@ -29,7 +29,6 @@ public class TermsAndConditionWebViewFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_terms_condition, container, false);
         ButterKnife.bind(this, view);
         return view;
-
     }
 
     @Override
