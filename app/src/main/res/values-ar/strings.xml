@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RegesterTask</string>
+    <string name="change_language_txt">تغيير اللغة</string>
+    <string name="register_text">تسجيل</string>
+    <string name="full_name">الاسم كاملا</string>
+    <string name="password">كلمة المرور</string>
+    <string name="email">البريد الاكترونى</string>
+    <string name="country">دولة</string>
+    <string name="city">مدينة</string>
+    <string name="by_clicking">بالضغط على تسجيل انت توافق على</string>
+    <string name="terms_and_conditions">الاحكام والشروط</string>
+    <string name="no_connection">تحقق من الاتصال بالانترنت</string>
+</resources>
